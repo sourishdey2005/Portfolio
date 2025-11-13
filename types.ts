@@ -1,0 +1,46 @@
+import React from 'react';
+
+export interface Project {
+    title: string;
+    subtitle?: string;
+    description: string;
+    achievements: string[];
+    tech: string[];
+    githubLink?: string;
+}
+
+export interface CertificationGroup {
+    issuer: string;
+    Icon: React.ComponentType<{ className?: string }>;
+    certs: string[];
+}
+
+export interface Skill {
+    name: string;
+    Icon: React.ComponentType<{ className?: string }>;
+}
+
+export interface SkillCategory {
+    title: string;
+    skills: Skill[];
+}
+
+export interface Experience {
+    role: string;
+    company: string;
+    companyUrl?: string;
+    date: string;
+    description: string[];
+}
+
+export interface Publication {
+    title: string;
+    journal: string;
+    year: number;
+}
+
+export interface Patent {
+    id: string;
+    title: string;
+    description: string;
+}

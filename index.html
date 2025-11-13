@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍💻</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sourish Dey | Cloud & Data Science Engineer</title>
+    
+    <meta name="description" content="Personal portfolio of Sourish Dey, a passionate Cloud & Data Science Engineer specializing in MLOps, AI/ML, DevOps, and Cloud Computing.">
+    <meta name="keywords" content="Sourish Dey, Portfolio, Cloud Engineer, Data Scientist, MLOps, AI, ML, DevOps, B.Tech CSE, KIIT University">
+    <meta name="author" content="Sourish Dey">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glassmorphic-card {
+                @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg;
+            }
+            .dark .glassmorphic-card {
+                @apply bg-black/10 border-white/5;
+            }
+            .glassmorphic-nav {
+                 @apply bg-slate-900/60 dark:bg-black/70 backdrop-blur-lg;
+            }
+            .gradient-text {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-cyan-300;
+            }
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 8px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                @apply bg-slate-800;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                @apply bg-slate-600 rounded-full;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                @apply bg-slate-500;
+            }
+        }
+    </style>
+     <script>
+        // Prevents flash of incorrect theme
+        (function() {
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24"
+  }
+}
+</script>
+</head>
+<body class="bg-gray-100 dark:bg-slate-900 text-gray-800 dark:text-gray-200 transition-colors duration-500 custom-scrollbar">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
