@@ -44,3 +44,9 @@ export interface Patent {
     title: string;
     description: string;
 }
+
+export interface Honor {
+    title: string;
+    issuer: string;
+    date: string;
+}
