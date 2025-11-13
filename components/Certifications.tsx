@@ -1,44 +1,75 @@
-
 import React from 'react';
 import { CertificationGroup } from '../types';
 import AnimatedSection from './AnimatedSection';
 import SectionHeader from './SectionHeader';
 // FIX: Import missing icons
-import { AWSIcon, GcpIcon, LinuxIcon, IBMIcon, CiscoIcon, AwardIcon } from './icons';
+import { AWSIcon, GcpIcon, LinuxIcon, IBMIcon, CheckIcon, MicrosoftIcon, FreeCodeCampIcon } from './icons';
 import { motion } from 'framer-motion';
 
 const certificationsData: CertificationGroup[] = [
     {
-        issuer: "AWS Educate",
-        Icon: AWSIcon,
-        certs: ["Machine Learning Foundations", "Cloud Essentials"]
-    },
-    {
-        issuer: "Google Cloud",
+        issuer: "Google Cloud & Terraform",
         Icon: GcpIcon,
-        certs: ["Terraform", "GKE", "Generative AI", "Cybersecurity"]
+        certs: [
+            "Google Cloud Cybersecurity Certificate",
+            "Build Infrastructure with Terraform",
+            "Manage Kubernetes in Google Cloud",
+            "Cloud Computing Foundations",
+            "Generative AI Certificate"
+        ]
     },
     {
-        issuer: "Linux Foundation",
+        issuer: "AWS & Docker",
+        Icon: AWSIcon,
+        certs: [
+            "AWS Machine Learning Foundations",
+            "AWS Cloud Essentials",
+            "Basic DevSecOps in AWS",
+            "Basic Docker Training"
+        ]
+    },
+    {
+        issuer: "Linux Foundation & Kubernetes",
         Icon: LinuxIcon,
-        certs: ["LFD110", "LFS167", "LFS158", "LFS151"]
+        certs: [
+            "LFS158: Introduction to Kubernetes",
+            "LFS167: Introduction to Jenkins",
+            "LFS151: Cloud Infrastructure Technologies",
+            "LFD110: Introduction to RISC-V"
+        ]
     },
     {
-        issuer: "IBM Cognitive Class",
+        issuer: "IBM & Deep Learning",
         Icon: IBMIcon,
-        certs: ["ML", "DL", "Quantum", "Big Data", "Containers"]
+        certs: [
+            "Deep Learning with TensorFlow",
+            "Accelerating Deep Learning with GPUs",
+            "Machine Learning with Python",
+            "Introduction to Quantum Computing",
+            "Containers, Kubernetes, and OpenShift"
+        ]
     },
     {
-        issuer: "Infosys + Skillsoft",
-        Icon: AwardIcon,
-        certs: ["DevSecOps", "Docker", "CI/CD", "Blockchain"]
+        issuer: "Microsoft & Data Analysis",
+        Icon: MicrosoftIcon,
+        certs: [
+            "Career Essentials in Data Analysis",
+            "Career Essentials in Generative AI",
+            "Analyzing and Visualizing Data with Power BI"
+        ]
     },
     {
-        issuer: "Cisco",
-        Icon: CiscoIcon,
-        certs: ["IoT", "Cybersecurity", "Networking", "Data Analytics"]
+        issuer: "freeCodeCamp & Python",
+        Icon: FreeCodeCampIcon,
+        certs: [
+            "Machine Learning with Python",
+            "Data Analysis with Python",
+            "Data Visualization",
+            "Scientific Computing with Python"
+        ]
     }
 ];
+
 
 const cardVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -68,16 +99,17 @@ const Certifications = () => {
                             custom={index}
                         >
                             <div className="flex items-center mb-4">
-                                <Icon className="w-10 h-10 text-teal-400 mr-4" />
+                                <Icon className="w-10 h-10 text-teal-400 mr-4 flex-shrink-0" />
                                 <h3 className="text-xl font-bold text-white">{group.issuer}</h3>
                             </div>
-                            <div className="flex flex-wrap gap-2">
+                            <ul className="space-y-2 flex-grow">
                                 {group.certs.map(cert => (
-                                    <span key={cert} className="bg-slate-700/50 text-gray-300 text-xs font-medium px-2.5 py-1 rounded-full">
-                                        {cert}
-                                    </span>
+                                    <li key={cert} className="flex items-start">
+                                        <CheckIcon className="w-4 h-4 text-teal-400 mr-2 mt-1 flex-shrink-0" />
+                                        <span className="text-gray-300 text-sm">{cert}</span>
+                                    </li>
                                 ))}
-                            </div>
+                            </ul>
                         </motion.div>
                     );
                 })}
