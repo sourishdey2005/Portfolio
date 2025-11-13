@@ -28,7 +28,7 @@ const publicationsData: Publication[] = [
 ];
 
 const patentsData: Patent[] = [
-    { id: "450888-001", title: "AI-Powered Smart Agriculture Drone", description: "Filed for autonomous drone system leveraging AI for precision agriculture, crop monitoring, and predictive yield analysis." },
+    { id: "468494-001", title: "AI-Powered Smart Agriculture Drone", description: "Filed for autonomous drone system leveraging AI for precision agriculture, crop monitoring, and predictive yield analysis." },
     { id: "450888-001", title: "Underwater Power Generator", description: "Filed for renewable underwater kinetic energy generator using magneto-inductive turbine systems." },
 ];
 
