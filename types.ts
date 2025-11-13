@@ -38,7 +38,9 @@ export interface Experience {
 export interface Publication {
     title: string;
     journal: string;
-    year: number;
+    date: string;
+    description: string;
+    authors?: string;
 }
 
 export interface Patent {
